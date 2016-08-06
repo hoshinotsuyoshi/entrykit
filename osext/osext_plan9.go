@@ -5,12 +5,14 @@
 package osext
 
 import (
+	"fmt"
 	"os"
 	"strconv"
 	"syscall"
 )
 
 func executable() (string, error) {
+	fmt.Println("a")
 	f, err := os.Open("/proc/" + strconv.Itoa(os.Getpid()) + "/text")
 	if err != nil {
 		return "", err

@@ -5,12 +5,16 @@
 // Extensions to the standard "os" package.
 package osext
 
-import "path/filepath"
+import (
+	"fmt"
+	"path/filepath"
+)
 
 // Executable returns an absolute path that can be used to
 // re-invoke the current program.
 // It may not be valid after the current program exits.
 func Executable() (string, error) {
+	fmt.Println("x")
 	p, err := executable()
 	return filepath.Clean(p), err
 }

@@ -7,6 +7,7 @@
 package osext
 
 import (
+	"fmt"
 	"os"
 	"path/filepath"
 	"runtime"
@@ -17,6 +18,7 @@ import (
 var initCwd, initCwdErr = os.Getwd()
 
 func executable() (string, error) {
+	fmt.Println("c")
 	var mib [4]int32
 	switch runtime.GOOS {
 	case "freebsd":
