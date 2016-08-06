@@ -14,6 +14,8 @@ import (
 	"github.com/mgood/go-posix"
 )
 
+// mapはhashっぽい型。以下のやつはキーがstringなmap。
+// 初期化の時に呼ばれるのがfunc..なのかな
 var Cmds = make(map[string]func(config *Config))
 
 var runlist = []string{
