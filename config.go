@@ -28,6 +28,28 @@ func NewConfig(cmd string, exec bool) *Config {
 	args := os.Args[1:]
 Loop:
 	for i, arg := range args {
+		/*
+		   ここで
+		   fmt.Println(cmd)
+		   fmt.Println(i)
+		   fmt.Println(arg)
+		   とすると
+
+		   $ go run cmd/entrykit.go -- echo hoge
+		   entrykit
+		   0
+		   --
+		   render
+		   0
+		   --
+		   switch
+		   0
+		   --
+		   codep
+		   0
+		   --
+		   hoge
+		*/
 		switch arg {
 		case "-e":
 			useEnv = true
