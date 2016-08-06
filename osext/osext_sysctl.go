@@ -4,6 +4,9 @@
 
 // +build darwin freebsd
 
+// ↑この+buildはifdef的なやつっぽい
+// http://qiita.com/yamasaki-masahide/items/8e5d59467dcf67d9b0be
+
 package osext
 
 import (
