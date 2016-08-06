@@ -29,6 +29,12 @@ func main() {
 			// とすると以下のように出力されるよ
 			// $ go run cmd/entrykit.go -v
 			// バージョンだよ
+
+			// $ go run cmd/entrykit.go -v
+			// したときの
+			// len(os.Args)は2,
+			// os.Args[0]は "/var/folders/k3/62ynls6s2pz7zhd4fyqzgthc0000gn/T/go-build760712289/command-line-arguments/_obj/exe/entrykit"
+			// みたいな文字列になる
 			fmt.Println(Version)
 			os.Exit(0)
 		case "--symlink":
