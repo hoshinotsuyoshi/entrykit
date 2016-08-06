@@ -10,7 +10,7 @@ import (
 	"strings"
 	"syscall"
 
-	"github.com/kardianos/osext"
+	"github.com/hoshinotsuyoshi/entrykit/osext"
 	"github.com/mgood/go-posix"
 )
 
