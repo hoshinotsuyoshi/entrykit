@@ -15,7 +15,9 @@ import (
 )
 
 // mapはhashっぽい型。以下のやつはキーがstringなmap。
-// 初期化の時に呼ばれるのがfunc..なのかな
+// http://d.hatena.ne.jp/ktat/20150621/1434893179
+// 関数がvalueになるっぽい
+// 第一引数が*Configじゃないのを入れるとエラーになるのかな？
 var Cmds = make(map[string]func(config *Config))
 
 var runlist = []string{
