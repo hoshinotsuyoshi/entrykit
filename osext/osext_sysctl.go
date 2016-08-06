@@ -28,7 +28,11 @@ func executable() (string, error) {
 		mib = [4]int32{1 /* CTL_KERN */, 38 /* KERN_PROCARGS */, int32(os.Getpid()), -1}
 	}
 
+	// uintptrは型の一種。
+	// https://golang.org/pkg/builtin/#uintptr
+	// uintptr is an integer type that is large enough to hold the bit pattern of any pointer.
 	n := uintptr(0)
+
 	// Get length.
 	_, _, errNum := syscall.Syscall6(syscall.SYS___SYSCTL, uintptr(unsafe.Pointer(&mib[0])), 4, 0, uintptr(unsafe.Pointer(&n)), 0, 0)
 	if errNum != 0 {
