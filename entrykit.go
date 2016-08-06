@@ -89,6 +89,7 @@ func CommandTask(task string) *exec.Cmd {
 }
 
 func Symlink() {
+	// "github.com/kardianos/osext" を理解しないといけなそう。。。
 	binaryPath, err := osext.Executable()
 	if err != nil {
 		log.Fatal(err)
