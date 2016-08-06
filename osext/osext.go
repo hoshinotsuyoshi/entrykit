@@ -12,6 +12,18 @@ import "path/filepath"
 // It may not be valid after the current program exits.
 func Executable() (string, error) {
 	p, err := executable()
+	// https://golang.org/pkg/path/filepath/#Clean
+	// Pathname的なのをキレイにするやつっぽい
+	//$ gore
+	//gore version 0.2.5  :help for help
+	//gore> :import "path/filepath"
+	//gore> filepath.Clean("../xxx")
+	//"../xxx"
+	//gore> filepath.Clean("../././xxx")
+	//"../xxx"
+	//gore> filepath.Clean("path/to/xxx/../../xxx")
+	//"path/xxx"
+	//gore>
 	return filepath.Clean(p), err
 }
 
