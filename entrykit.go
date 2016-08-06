@@ -29,6 +29,9 @@ var runlist = []string{
 	//"waitgrp",
 }
 
+// init()は特別な関数。
+// mainに先立って呼ばれる
+// http://qiita.com/suin/items/ab2db295742afcf02334
 func init() {
 	Cmds["entrykit"] = RunMulti
 }
