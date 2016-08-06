@@ -69,6 +69,7 @@ Loop:
 			}
 			break Loop
 		default:
+			// starts_with?的な
 			if strings.HasPrefix(arg, "-") {
 				Error(fmt.Errorf("Unknown option %s", arg))
 			}
