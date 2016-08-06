@@ -6,6 +6,11 @@ import (
 
 	"github.com/progrium/entrykit"
 
+	// import内のアンスコは「ブランク識別子」
+	// http://hogesuke.hateblo.jp/entry/2014/09/12/080005
+	// https://golang.org/ref/spec#Import_declarations
+	//	"To import a package solely(もっぱら) for its side-effects (initialization),
+	//	use the blank identifier as explicit package name:"
 	_ "github.com/progrium/entrykit/codep"
 	_ "github.com/progrium/entrykit/prehook"
 	_ "github.com/progrium/entrykit/render"
