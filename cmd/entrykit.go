@@ -4,17 +4,17 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/progrium/entrykit"
+	"github.com/hoshinotsuyoshi/entrykit"
 
 	// import内のアンスコは「ブランク識別子」
 	// http://hogesuke.hateblo.jp/entry/2014/09/12/080005
 	// https://golang.org/ref/spec#Import_declarations
 	//	"To import a package solely(もっぱら) for its side-effects (initialization),
 	//	use the blank identifier as explicit package name:"
-	_ "github.com/progrium/entrykit/codep"
-	_ "github.com/progrium/entrykit/prehook"
-	_ "github.com/progrium/entrykit/render"
-	_ "github.com/progrium/entrykit/switch"
+	_ "github.com/hoshinotsuyoshi/entrykit/codep"
+	_ "github.com/hoshinotsuyoshi/entrykit/prehook"
+	_ "github.com/hoshinotsuyoshi/entrykit/render"
+	_ "github.com/hoshinotsuyoshi/entrykit/switch"
 )
 
 var Version string
