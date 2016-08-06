@@ -14,10 +14,16 @@ import (
 
 var Version string
 
+// $ go run cmd/entrykit.goするとここを通るよ
 func main() {
 	if len(os.Args) > 1 {
 		switch os.Args[1] {
 		case "-v", "--version":
+			// ここで
+			// Version = "バージョンだよ"
+			// とすると以下のように出力されるよ
+			// [/Users/berlin/go/src/github.com/hoshinotsuyoshi/entrykit]$ go run cmd/entrykit.go -v
+			// バージョンだよ
 			fmt.Println(Version)
 			os.Exit(0)
 		case "--symlink":
