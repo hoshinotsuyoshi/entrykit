@@ -10,10 +10,14 @@ import (
 	"strings"
 	"syscall"
 
-	"github.com/kardianos/osext"
+	"github.com/hoshinotsuyoshi/entrykit/osext"
 	"github.com/mgood/go-posix"
 )
 
+// mapはhashっぽい型。以下のやつはキーがstringなmap。
+// http://d.hatena.ne.jp/ktat/20150621/1434893179
+// 関数がvalueになるっぽい
+// 第一引数が*Configじゃないのを入れるとエラーになるのかな？
 var Cmds = make(map[string]func(config *Config))
 
 var runlist = []string{
@@ -25,6 +29,9 @@ var runlist = []string{
 	//"waitgrp",
 }
 
+// init()は特別な関数。
+// mainに先立って呼ばれる
+// http://qiita.com/suin/items/ab2db295742afcf02334
 func init() {
 	Cmds["entrykit"] = RunMulti
 }
@@ -89,10 +96,17 @@ func CommandTask(task string) *exec.Cmd {
 }
 
 func Symlink() {
+	// "github.com/kardianos/osext" を理解しないといけなそう。。。
+	// binaryPatha には"/private/var/folders/k3/62ynls6s2pz7zhd4fyqzgthc0000gn/T/go-build161022519/command-line-arguments/_obj/exe/entrykit"
+	// みたいな文字列が入る
 	binaryPath, err := osext.Executable()
 	if err != nil {
 		log.Fatal(err)
 	}
+	// マップの全エントリに対してブロックを実行する
+	// http://ashitani.jp/golangtips/tips_map.html
+	// for key,value= range m{
+	// }
 	for name, _ := range Cmds {
 		target := filepath.Dir(binaryPath) + "/" + name
 		fmt.Println("Creating symlink", target, "...")

@@ -1,8 +1,8 @@
 package main
 
 import (
-	"github.com/progrium/entrykit"
-	_ "github.com/progrium/entrykit/codep"
+	"github.com/hoshinotsuyoshi/entrykit"
+	_ "github.com/hoshinotsuyoshi/entrykit/codep"
 )
 
 var cmd = "codep"
