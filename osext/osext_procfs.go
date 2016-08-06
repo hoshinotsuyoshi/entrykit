@@ -15,7 +15,6 @@ import (
 )
 
 func executable() (string, error) {
-	fmt.Println("b")
 	switch runtime.GOOS {
 	case "linux":
 		const deletedTag = " (deleted)"
