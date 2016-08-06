@@ -98,6 +98,10 @@ func Symlink() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	// マップの全エントリに対してブロックを実行する
+	// http://ashitani.jp/golangtips/tips_map.html
+	// for key,value= range m{
+	// }
 	for name, _ := range Cmds {
 		target := filepath.Dir(binaryPath) + "/" + name
 		fmt.Println("Creating symlink", target, "...")
