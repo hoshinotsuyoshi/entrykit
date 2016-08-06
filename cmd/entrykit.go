@@ -38,6 +38,7 @@ func main() {
 			fmt.Println(Version)
 			os.Exit(0)
 		case "--symlink":
+			// {root}/entrykit.go のfunc Symlink()で定義されている
 			entrykit.Symlink()
 			os.Exit(0)
 		}
