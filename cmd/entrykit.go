@@ -27,7 +27,7 @@ func main() {
 			// ここで
 			// Version = "バージョンだよ"
 			// とすると以下のように出力されるよ
-			// [/Users/berlin/go/src/github.com/hoshinotsuyoshi/entrykit]$ go run cmd/entrykit.go -v
+			// $ go run cmd/entrykit.go -v
 			// バージョンだよ
 			fmt.Println(Version)
 			os.Exit(0)
