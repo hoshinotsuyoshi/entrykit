@@ -90,6 +90,8 @@ func CommandTask(task string) *exec.Cmd {
 
 func Symlink() {
 	// "github.com/kardianos/osext" を理解しないといけなそう。。。
+	// binaryPatha には"/private/var/folders/k3/62ynls6s2pz7zhd4fyqzgthc0000gn/T/go-build161022519/command-line-arguments/_obj/exe/entrykit"
+	// みたいな文字列が入る
 	binaryPath, err := osext.Executable()
 	if err != nil {
 		log.Fatal(err)
